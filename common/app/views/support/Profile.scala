@@ -229,7 +229,7 @@ object Naked extends Profile(None, None)
 
 object ImgSrc extends Logging with implicits.Strings {
 
-  private val imageServiceHost: String = Configuration.images.path
+  private val imageServiceHost: String = Configuration.images.fastlyIOHost
 
   private case class HostMapping(prefix: String, token: String)
 
