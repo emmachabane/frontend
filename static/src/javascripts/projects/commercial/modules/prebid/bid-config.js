@@ -24,6 +24,7 @@ import {
     getBreakpointKey,
     getRandomIntInclusive,
     isExcludedGeolocation,
+    shouldIncludeTrustX,
     stripMobileSuffix,
     stripTrailingNumbersAbove1,
 } from 'commercial/modules/prebid/utils';
@@ -332,7 +333,7 @@ const otherBidders: PrebidBidder[] = [];
 if (config.get('switches.prebidSonobi')) {
     otherBidders.push(sonobiBidder);
 }
-if (config.get('switches.prebidTrustx')) {
+if (config.get('switches.prebidTrustx') && shouldIncludeTrustX()) {
     otherBidders.push(trustXBidder);
 }
 if (config.get('switches.prebidImproveDigital')) {
